@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-08-18T04:07:56.756Z</updated>
+  <updated>2024-08-22T20:16:59.473Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2024/08/21/%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C/"/>
     <id>http://example.com/2024/08/21/%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C/</id>
     <published>2024-08-21T15:34:02.552Z</published>
-    <updated>2024-08-18T04:07:56.756Z</updated>
+    <updated>2024-08-22T20:16:59.473Z</updated>
     
     <content type="html"><![CDATA[<p>欢迎来到 <a href="https://hexo.io/">Hexo</a>！这是你的第一篇文章。点击查看 <a href="https://hexo.io/docs/">文档</a> 更多信息。如果你在使用 Hexo 时遇到任何问题，你可以在 <a href="https://hexo.io/docs/troubleshooting.html">故障排除</a> 中找到答案或者你可以问我 <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><h3 id="创建新帖子"><a href="#创建新帖子" class="headerlink" title="创建新帖子"></a>创建新帖子</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>更多信息：<a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>更多信息：<a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>更多信息：<a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>更多信息：<a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     

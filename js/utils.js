@@ -525,7 +525,7 @@ const anzhiyu = {
     const minute = 1000 * 60;
     const hour = minute * 60;
     const day = hour * 24;
-    const month = day * 30;
+    const month = day * 7;
 
     let result;
     if (more) {
