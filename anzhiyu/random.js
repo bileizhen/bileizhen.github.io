@@ -1,4 +1,4 @@
-var posts=["2018/07/24/markdown/","2024/09/15/代理工具の机场推荐｜介绍与使用一条龙/"];function toRandomPost(){
+var posts=["2024/09/15/代理工具の机场推荐｜介绍与使用一条龙/"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };var friend_link_list=[{"name":"阿玟导航","link":"https://scvo.top/","avatar":"https://scvo.top/wen/favicon.png","descr":"希望可以帮到你","siteshot":"https://pic.imgdb.cn/item/66c757d0d9c307b7e9322388.jpg"},{"name":"bileizhen","link":"https://bileizhen.top","avatar":"https://pic.imgdb.cn/item/66c56083d9c307b7e9ca48fc.webp","descr":"一个毫无存在感的猫娘","siteshot":"https://npm.elemecdn.com/anzhiyu-theme-static@1.1.6/img/blog.anheyu.com.jpg","color":"vip","tag":"技术"},{"name":"阿玟","link":"https://aw.scvo.top/","avatar":"https://aw.scvo.top/wp-content/uploads/2024/03/17095539322024030412053291.jpg","descr":"我是一个奇奇怪怪的人，有很多奇奇怪怪的爱好。长期乱点技能书，导致什么都不会，也做不好。悲催。﹏。","recommend":true}];
     var refreshNum = 1;
