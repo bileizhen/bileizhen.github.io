@@ -1,0 +1,171 @@
+---
+// src/components/widget/MusicPlayer.astro
+import { musicPlayerConfig } from "@/config/musicConfig";
+import MusicPlayerSvelte from "./MusicPlayerSvelte.svelte";
+import { url } from "@/utils/url-utils";
+
+const config = musicPlayerConfig;
+
+// 预处理本地音乐列表的路径（如果使用本地模式）
+const processedLocalPlaylist =
+  config.mode === "local" && config.local?.playlist
+    ? config.local.playlist.map((song) => {
+        const isFullUrl = (path: string): boolean => {
+          return /^https?:\/\//.test(path);
+        };
+
+        return {
+          ...song,
+          url: isFullUrl(song.url) ? song.url : url(song.url),
+          cover: song.cover
+            ? isFullUrl(song.cover)
+              ? song.cover
+              : url(song.cover)
+            : undefined,
+        };
+      })
+    : null;
+---
+
+{config.enable && (
+  <>
+    <!-- 根据配置选择播放器类型 -->
+    {config.playerType === "svelte" ? (
+      <!-- 渲染 Svelte 播放器 -->
+      <MusicPlayerSvelte client:load />
+    ) : (
+      <!-- 渲染 APlayer -->
+      <>
+        <!-- APlayer CSS -->
+        <link rel="stylesheet" href={url("/assets/css/APlayer.min.css")} />
+        <link rel="stylesheet" href={url("/assets/css/APlayer.custom.css")} />
+
+        <!-- 音乐播放器容器 -->
+        <div id="aplayer-container" class:mobile-hide={config.responsive?.mobile?.hide}>
+          {config.mode === "meting" && config.meting ? (
+            <!-- 使用 MetingJS -->
+            <meting-js
+              server={config.meting.server || "netease"}
+              type={config.meting.type || "playlist"}
+              id={config.meting.id || ""}
+              api={config.meting.api}
+              auth={config.meting.auth}
+              fixed={(config.player?.fixed ?? true) ? "true" : "false"}
+              mini={(config.player?.mini ?? true) ? "true" : "false"}
+              autoplay={config.player?.autoplay ? "true" : "false"}
+              theme={config.player?.theme || "#b7daff"}
+              loop={config.player?.loop || "all"}
+              order={config.player?.order || "list"}
+              preload={config.player?.preload || "auto"}
+              volume={String(config.player?.volume ?? 0.7)}
+              mutex={config.player?.mutex !== false ? "true" : "false"}
+              list-folded={config.player?.listFolded ? "true" : "false"}
+              list-max-height={config.player?.listMaxHeight || "340px"}
+              storage-name={config.player?.storageName || "aplayer-setting"}
+            />
+          ) : config.mode === "local" && processedLocalPlaylist && processedLocalPlaylist.length > 0 ? (
+            <!-- 使用本地音乐列表，统一使用 APlayer 直接初始化 -->
+            <div id="local-aplayer"></div>
+          ) : null}
+        </div>
+      </>
+    )}
+  </>
+)}
+
+{config.enable && config.playerType === "aplayer" && (
+  <script define:vars={{ config, processedLocalPlaylist }} is:inline>
+    // 动态加载 APlayer 和 MetingJS
+    (function() {
+      // 确保在浏览器环境中运行
+      if (typeof window === 'undefined') return;
+
+      console.log("初始化APlayer播放器...");
+      
+      // 加载APlayer JS
+      function loadAPlayer() {
+        return new Promise((resolve) => {
+          if (window.APlayer) {
+            resolve(window.APlayer);
+            return;
+          }
+
+          const aplayerScript = document.createElement("script");
+          aplayerScript.src = new URL('/assets/js/APlayer.min.js', window.location.origin).href;
+          aplayerScript.async = true;
+          aplayerScript.onload = () => resolve(window.APlayer);
+          aplayerScript.onerror = () => resolve(null);
+          document.head.appendChild(aplayerScript);
+        });
+      }
+      
+      // 加载MetingJS
+      function loadMetingJS() {
+        return new Promise((resolve) => {
+          if (window.customElements?.get("meting-js")) {
+            resolve(true);
+            return;
+          }
+
+          const metingJsPath = config.meting?.jsPath
+            ? config.meting.jsPath.startsWith("http://") ||
+              config.meting.jsPath.startsWith("https://")
+              ? config.meting.jsPath
+              : new URL(config.meting.jsPath, window.location.origin).href
+            : "https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js";
+
+          const metingScript = document.createElement("script");
+          metingScript.src = metingJsPath;
+          metingScript.async = true;
+          metingScript.onload = () => resolve(true);
+          metingScript.onerror = () => resolve(false);
+          document.head.appendChild(metingScript);
+        });
+      }
+      
+      // 初始化本地播放器
+      function initLocalPlayer() {
+        if (!processedLocalPlaylist || processedLocalPlaylist.length === 0) return;
+        
+        const container = document.getElementById("local-aplayer");
+        if (container && window.APlayer) {
+          try {
+            // 初始化 APlayer
+            new window.APlayer({
+              container: container,
+              fixed: config.player?.fixed ?? true,
+              mini: config.player?.mini ?? true,
+              autoplay: config.player?.autoplay || false,
+              theme: config.player?.theme || "#b7daff",
+              loop: config.player?.loop || "all",
+              order: config.player?.order || "list",
+              preload: config.player?.preload || "auto",
+              volume: config.player?.volume ?? 0.7,
+              mutex: config.player?.mutex !== false,
+              listFolded: config.player?.listFolded || false,
+              listMaxHeight: config.player?.listMaxHeight || "340px",
+              storageName: config.player?.storageName || "aplayer-setting",
+              audio: processedLocalPlaylist,
+            });
+          } catch (error) {
+            console.error("初始化本地播放器失败:", error);
+          }
+        }
+      }
+      
+      // 初始化播放器
+      async function init() {
+        if (config.mode === "meting") {
+          await loadAPlayer();
+          await loadMetingJS();
+        } else if (config.mode === "local") {
+          await loadAPlayer();
+          initLocalPlayer();
+        }
+      }
+      
+      // 延迟初始化，确保DOM已加载
+      setTimeout(init, 100);
+    })();
+  </script>
+)}
