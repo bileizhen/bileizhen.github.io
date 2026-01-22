@@ -4,23 +4,14 @@ import type { FriendLink } from "../types/config";
 
 // 友链配置
 export const friendsConfig: FriendLink[] = [
-    {   title: "年华昔涟",
-		imgurl: "https://q1.qlogo.cn/g?b=qq&nk=3891628045&s=640",
-		desc: "这一定是个不同以往的浪漫故事。",
-		siteurl: "https://qwc-ch.github.io",
+    {   title: "bileizhen",
+		imgurl: "https://pic.imgdb.cn/item/66c56083d9c307b7e9ca48fc.webp",
+		desc: "一个毫无存在感的猫娘",
+		siteurl: "https://blog.bileizhen.top",
 		tags: ["Blog"],
 		weight: 11, // 权重，数字越大排序越靠前
 		enabled: true, // 是否启用
     },
-	{
-		title: "夏夜流萤",
-		imgurl: "https://q1.qlogo.cn/g?b=qq&nk=7618557&s=640",
-		desc: "飞萤之火自无梦的长夜亮起，绽放在终竟的明天。",
-		siteurl: "https://blog.cuteleaf.cn",
-		tags: ["Blog"],
-		weight: 10, // 权重，数字越大排序越靠前
-		enabled: true, // 是否启用
-	},
 	{
 		title: "Firefly Docs",
 		imgurl: "https://docs-firefly.cuteleaf.cn/logo.png",

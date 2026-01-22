@@ -25,7 +25,7 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 		type: "playlist",
 
 		// 歌单/专辑/单曲 ID 或搜索关键词
-		id: "17572243226", // 网易云音乐歌单ID示例
+		id: "9918106457", // 网易云音乐歌单ID示例
 
 		// 认证 token（可选）
 		auth: "",
@@ -112,7 +112,7 @@ export const musicPlayerConfig: MusicPlayerConfig = {
 	svelte: {
 		// Meting API 配置（用于Svelte播放器）
 		meting_api: "https://www.bilibili.uno/api?server=:server&type=:type&id=:id&auth=:auth&r=:r",
-		id: "17572243226", // 可以设置不同的歌单
+		id: "9918106457", // 可以设置不同的歌单
 		server: "netease",
 		type: "playlist",
 		

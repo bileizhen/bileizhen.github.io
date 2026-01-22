@@ -15,7 +15,7 @@ export const sponsorConfig: SponsorConfig = {
 		{
 			name: "支付宝",
 			icon: "fa6-brands:alipay",
-			qrCode: "/assets/images/sponsor/examp.png", // 收款码图片路径（需要放在 public 目录下）
+			qrCode: "/assets/images/sponsor/zfb.png", // 收款码图片路径（需要放在 public 目录下）
 			link: "",
 			description: "使用 支付宝 扫码赞助",
 			enabled: true,
@@ -23,7 +23,7 @@ export const sponsorConfig: SponsorConfig = {
 		{
 			name: "微信",
 			icon: "fa6-brands:weixin",
-			qrCode: "/assets/images/sponsor/examp.png", // 收款码图片路径
+			qrCode: "/assets/images/sponsor/wx.png", // 收款码图片路径
 			link: "",
 			description: "使用 微信 扫码赞助",
 			enabled: true,
@@ -32,7 +32,7 @@ export const sponsorConfig: SponsorConfig = {
 			name: "Github",
 			icon: "fa6-brands:github",
 			qrCode: "",
-			link: "https://github.com/qwc-ch/Cyene",
+			link: "https://github.com/bileizhen",
 			description: "点个Star就是最大的支持",
 			enabled: true,
 		},
@@ -42,9 +42,9 @@ export const sponsorConfig: SponsorConfig = {
 	sponsors: [
 		// 示例：已实名赞助者
 		{
-			name: "张三",
-			amount: "¥50",
-			date: "2025-10-01",
+			name: "小张",
+			amount: "¥100",
+			date: "2024-09-25",
 			message: "感谢分享！",
 		},
 		// 示例：匿名赞助者

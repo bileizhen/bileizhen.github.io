@@ -4,9 +4,9 @@ export const profileConfig: ProfileConfig = {
 	// 头像
 	avatar: "/assets/images/avatar.webp",
 	// 名字
-	name: "Cyrene",
+	name: "bileizhen",
 	// 个人签名
-	bio: "Hello, I'm Cyrene.",
+	bio: "Hello, I'm bileizhen.",
 
 	// 链接配置
 	// 已经预装的图标集：fa6-brands，fa6-regular，fa6-solid，material-symbols，simple-icons
@@ -18,19 +18,19 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "Bilibli",
 			icon: "fa6-brands:bilibili",
-			url: "https://space.bilibili.com/3546591015209640",
+			url: "https://space.bilibili.com/643811437",
 			showName: false,
 		},
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/qwc-ch",
+			url: "https://github.com/bileizhen",
 			showName: false,
 		},
 		{
 	        name: "Email",
 	        icon: "fa6-solid:envelope",
-	        url: "mailto:zzzzzzxx2022@163.com",
+	        url: "mailto:lei3140014249@163.com",
 	        showName: false,
         }
 	],

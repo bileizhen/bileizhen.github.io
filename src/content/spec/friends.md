@@ -10,10 +10,10 @@ description: "与优秀的朋友们一起成长"
 申请友链前请先在自己网站添加本站友链，请使用以下信息：
 
 ```yaml
-站点名称: 年华昔涟
-站点描述: 这一定是个不同以往的浪漫故亊。
-站点链接: https://qwc-ch.github.io
-头像链接: https://q1.qlogo.cn/g?b=qq&nk=3891628045&s=640
+站点名称: bileizhen
+站点描述: 一个毫无存在感的猫娘
+站点链接: https://blog.bileizhen.top
+头像链接: https://pic.imgdb.cn/item/66c56083d9c307b7e9ca48fc.webp
 
 ```
 

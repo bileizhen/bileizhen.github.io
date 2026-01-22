@@ -22,13 +22,13 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		children: [
 			{
 				name: "GitHub",
-				url: "https://github.com/qwc-ch/Cyrene",
+				url: "https://github.com/bileizhen",
 				external: true,
 				icon: "fa6-brands:github",
 			},
 			{
 				name: "Bilibili",
-				url: "https://space.bilibili.com/3546591015209640",
+				url: "https://space.bilibili.com/643811437",
 				external: true,
 				icon: "fa6-brands:bilibili",
 			},
