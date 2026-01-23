@@ -105,7 +105,7 @@ export const siteConfig: SiteConfig = {
 			// 桌面背景图片
 			desktop: "/assets/images/d3.webp",
 			// 移动背景图片
-			mobile: "/assets/images/m1.webp",
+			mobile: "https://t.alcy.cc/moez",
 		},
 
 		// Banner模式特有配置
