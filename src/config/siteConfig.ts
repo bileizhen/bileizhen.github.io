@@ -141,11 +141,11 @@ export const siteConfig: SiteConfig = {
 				},
 				text: {
 					desktop: "Wallpaper - [4K | 可自定义] 梦留下的足迹 | 夢が残した足跡", // 桌面端要显示的来源文本
-					mobile: "BilBil - 崩坏星穹铁道", // 移动端要显示的来源文本
+					mobile: "栗次元API - 萌版", // 移动端要显示的来源文本
 				},
 				url: {
 					desktop: "https://steamcommunity.com/sharedfiles/filedetails/?id=3163060610", // 桌面端原始艺术品或艺术家页面的 URL 链接
-					mobile: "https://space.bilibili.com/1340190821", // 移动端原始艺术品或艺术家页面的 URL 链接
+					mobile: "https://t.alcy.cc/moez", // 移动端原始艺术品或艺术家页面的 URL 链接
 				},
 			},
 			navbar: {
